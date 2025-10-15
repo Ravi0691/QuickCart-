@@ -6,7 +6,10 @@ const userSchema=new mongoose.Schema({
      name:{type:String,required:true},
       email:{type:String,required:true,unique:true},
        imageUrl:{type:String,required:true},
-        cartItems:{type:String,required:true},
+     cartItems: {
+      type: Object,
+      required: false, 
+      default: {}, },
 
 },{minimize:false})
 
