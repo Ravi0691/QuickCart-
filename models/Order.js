@@ -6,13 +6,16 @@ const orderSchema = new mongoose.Schema({
     {
       product: { type: String, required: true, ref: 'product' },
       quantity: { type: Number, required: true },
-    }],
+    },
+  ],
   amount: { type: Number, required: true },
-  address: { type: String, ref: 'address',required: true },
+  address: { type: String, ref: 'address', required: true },
   status: { type: String, required: true, default: "Order Placed Successfully" },
-  date: { type: Number, required: true },
+  date: { type: Date, default: Date.now },
 });
 
-const Order = mongoose.models.order || mongoose.model('order', orderSchema);
 
-export default Order;
+const Order = mongoose.models.order || mongoose.model('Order', orderSchema);
+
+
+export default Order

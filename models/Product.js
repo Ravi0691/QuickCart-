@@ -11,7 +11,7 @@ const productSchema = new mongoose.Schema({
     required: true,
   },
   category: { type: String, required: true },
-  date: { type: Number, default: Date.now },
+  date: { type: Date, default: Date.now },
 });
 
 const Product =
