@@ -1,8 +1,6 @@
 'use client'
-import { productsDummyData, userDummyData } from "@/assets/assets";
 import { useAuth, useUser } from "@clerk/nextjs";
 import axios from "axios";
-import { set } from "mongoose";
 import { useRouter } from "next/navigation";
 import { createContext, useContext, useEffect, useState } from "react";
 import toast from "react-hot-toast";
@@ -63,7 +61,6 @@ export const AppContextProvider = (props) => {
         {
             toast.error(data.message)
         }
-        setUserData(userDummyData)
             
         } catch (error) {
             
